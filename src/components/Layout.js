@@ -6,11 +6,27 @@ import "../assets/css/main.css";
 import { connect } from "react-redux";
 
 class Layout extends Component {
-    render() {
-        return (
-            <div>
+    constructor(props) {
+        super(props);
+    }
 
-            </div>
+    render() {
+
+        return (
+            <Fragment>
+                <Grid container className={classes.root} spacing={16}>
+                    {this.props.user.loggedIn && (
+                        <Grid item xs={12}>
+                            Menu
+                        </Grid>
+                    )}
+                    <Grid item xs={12}>
+                        <Paper>
+                            <div className={this.props.location.pathname === "/login" ? "" : "main-panel"}>{this.props.children}</div>
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Fragment>
         );
     }
 }
