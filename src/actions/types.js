@@ -1,0 +1,10 @@
+export const LOG_IN = "USER:LOG_IN";
+export const LOG_OUT = "USER:LOG_OUT";
+export const ERROR_LOGIN = "USER:ERROR_LOGIN";
+export const CHANGE_LOADING = "USER:CHANGE_LOADING";
+export const CHECK_LOGIN = "USER:CHECK_LOGIN";
+export const GET_USERS = "USER:GET_USERS";
+export const GET_USER = "USER:GET_USER";
+
+export const POPULATE_USER_TABLE = "USERS:POPULATE_USER_TABLE";
+export const CHANGE_LOADING_USERS = "USERS:CHANGE_LOADING_USERS";
