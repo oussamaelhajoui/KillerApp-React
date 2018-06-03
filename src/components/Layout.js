@@ -9,13 +9,19 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import { checkLogin } from "../actions/checkLoginAction";
 
 const theme = createMuiTheme();
 
 class Layout extends Component {
 
-    render() {
+    constructor(props) {
+        super(props);
 
+        this.props.checkLogin();
+    }
+
+    render() {
         return (
             <Fragment>
                 <MuiThemeProvider theme={theme}>
@@ -41,5 +47,5 @@ const mapStateToProps = state => ({
     user: state.user
 });
 export default withRouter(
-    connect(mapStateToProps, {})(Layout)
+    connect(mapStateToProps, { checkLogin })(Layout)
 );

@@ -53,6 +53,11 @@ class Login extends Component {
         this.props.logIn({ username: this.state.username, password: this.state.password })
     };
 
+    handleLoginOnEnter = event => {
+        if (event.keyCode === 13)
+            this.props.logIn({ username: this.state.username, password: this.state.password })
+    };
+
     handleMouseDownPassword = event => {
         event.preventDefault();
     };
@@ -73,7 +78,7 @@ class Login extends Component {
                             />
                         </Grid>
                         <Grid item xs={12} md={6} className="GridWPadding20">
-                            <form>
+                            <form onSubmit={this.handleLogin}>
                                 <Grid container justify="center" alignItems="center" alignContent="space-between">
                                     <Grid item xs={12}>
                                         <FormControl fullWidth={true} className="FCWM20">
@@ -92,7 +97,6 @@ class Login extends Component {
                                                     </InputAdornment>
                                                 }
                                             />
-                                            {/* <FormHelperText id="name-error-text">Error</FormHelperText> */}
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={12}>
@@ -103,7 +107,7 @@ class Login extends Component {
                                                 type={this.state.showPassword ? 'text' : 'password'}
                                                 value={this.state.password}
                                                 onChange={this.handleChange('password')}
-
+                                                onKeyUp={this.handleLoginOnEnter}
                                                 fullWidth={true}
                                                 endAdornment={
                                                     <InputAdornment position="end">
