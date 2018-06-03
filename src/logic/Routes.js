@@ -9,6 +9,8 @@ import { connect } from "react-redux";
 import { logIn } from "../actions/loginAction";
 import { checkLogin } from "../actions/checkLogin";
 
+import Dasboard from '../components/pages/Dasboard'
+
 class Routes extends Component {
     render() {
         return (
