@@ -1,10 +1,10 @@
 import { LOG_IN, LOG_OUT, CHECK_LOGIN, GET_USER, ERROR_LOGIN, CHANGE_LOADING } from "../actions/types";
 
 const initialState = {
-    loggedIn: false, // set to false
+    loggedIn: true, // set to false
     username: "",
     password: "",
-    userRole: null, //set to null
+    userRole: 1, //set to null
     token: null,
     errorMsg: "",
     loading: false,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { Switch, withRouter } from "react-router-dom";
 
 import Layout from "../components/Layout";
 
@@ -7,9 +7,9 @@ import { PrivateRoute } from "./Libary";
 
 import { connect } from "react-redux";
 import { logIn } from "../actions/loginAction";
-import { checkLogin } from "../actions/checkLogin";
+import { checkLogin } from "../actions/checkLoginAction";
 
-import Dasboard from '../components/pages/Dasboard'
+import Dashboard from '../components/pages/Dashboard'
 
 class Routes extends Component {
     render() {
@@ -26,8 +26,7 @@ class Routes extends Component {
 
 const mapStateToProps = state => ({
     user: state.user
-  });
-  export default withRouter(
+});
+export default withRouter(
     connect(mapStateToProps, { logIn, checkLogin })(Routes)
-  );
-  
+);
