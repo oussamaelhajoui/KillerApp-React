@@ -19,7 +19,7 @@ class Layout extends Component {
         return (
             <Fragment>
                 <MuiThemeProvider theme={theme}>
-                    <Grid container spacing={16}>
+                    <Grid container spacing={0}>
                         {this.props.user.loggedIn && (
                             <Grid item xs={12}>
                                 Menu
@@ -27,7 +27,7 @@ class Layout extends Component {
                         )}
                         <Grid item xs={12}>
                             <Paper>
-                                <div className={this.props.location.pathname === "/login" ? "" : "main-panel"}>{this.props.children}</div>
+                                <div className={this.props.location.pathname === "/login" ? "login-panel" : "main-panel"}>{this.props.children}</div>
                             </Paper>
                         </Grid>
                     </Grid>

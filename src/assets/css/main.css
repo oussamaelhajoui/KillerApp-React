@@ -1,0 +1,8 @@
+.login-panel{
+    padding: 25px;
+    height: 100vh;
+}
+
+.errorText{
+    color:red !important;
+}
