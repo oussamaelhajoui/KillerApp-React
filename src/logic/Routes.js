@@ -16,11 +16,18 @@ class Routes extends Component {
         return (
             <Layout>
                 <Switch>
-
+                    {/* {!this.props.user.loggedIn && <PrivateRoute exact path="/" component={Login} user={this.props.user} />} */}
+                    {(this.props.user.userRole === 1) ? <PrivateRoute exact path="/" component={Dashboard} user={this.props.user} /> : ""}
                 </Switch>
             </Layout>
         );
     }
 }
 
-export default Routes;
+const mapStateToProps = state => ({
+    user: state.user
+  });
+  export default withRouter(
+    connect(mapStateToProps, { logIn, checkLogin })(Routes)
+  );
+  
